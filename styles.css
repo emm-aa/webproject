@@ -1,0 +1,219 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/***** Global Styles *****/
+body {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/***** Header & Navigation *****/
+header {
+    background-color: #99d9c9c0;
+    color: white;
+    text-align: center;
+}
+
+nav {
+    background-color: #141e2899;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+nav.visible {
+    transform: translateY(0);
+}
+
+#nav div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1100;
+    background-color: #141e2899;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#nav div ul,
+#navbar nav ul {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    display: inline;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav div ul li,
+#navbar nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+#nav div ul li a,
+#navbar nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 6px 12px;
+    transition: 0.3s ease-in-out;
+}
+
+#nav div ul li a:hover,
+#navbar nav ul li a:hover {
+    background-color: white;
+    color: #121a14a8;
+    border-radius: 5px;
+}
+
+#fixed-navbar {
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #244638;
+    /* Adjust color as needed */
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    /* Smooth hide effect */
+}
+
+/* Navigation links */
+#fixed-navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#fixed-navbar ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+#fixed-navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 6px 12px;
+    transition: 0.3s ease-in-out;
+}
+
+#fixed-navbar ul li a:hover {
+    color: #188048;
+}
+
+
+
+/***** Main Content *****/
+.hero {
+    text-align: center;
+    padding: 2rem;
+    background-color: #e8f5e9;
+}
+
+.logo {
+    width: 30%;
+}
+
+.sections {
+    display: flex;
+    justify-content: space-around;
+    padding: 3rem;
+}
+
+.section {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+}
+
+/***** Forms & Buttons *****/
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #191f26ad;
+}
+
+/***** Footer *****/
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+/***** Container *****/
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/***** Responsive Adjustments *****/
+.menu-toggle {
+    display: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
