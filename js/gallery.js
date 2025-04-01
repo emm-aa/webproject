@@ -1,8 +1,8 @@
 // Getting all required elements
 const galleryImages = document.querySelectorAll(".gallery .image img");
 const previewBox = document.querySelector(".preview-box");
-const previewImg = previewBox.querySelector("img");
-const closeIcon = previewBox.querySelector(".icon");
+const previewImg = previewBox.querySelector(".image-box img");
+const closeIcon = document.getElementById("close-icon");
 const currentImg = previewBox.querySelector(".current-img");
 const totalImg = previewBox.querySelector(".total-img");
 const shadow = document.querySelector(".shadow");
@@ -17,9 +17,11 @@ totalImg.textContent = galleryImages.length;
 // Function to show the preview box
 const showPreview = (index) => {
     currentIndex = index;
+
+    // Ensure the selected image is from the gallery, not the navigation buttons
     const selectedImage = galleryImages[index];
-    previewImg.src = selectedImage.src;
-    currentImg.textContent = index + 1;
+    previewImg.src = selectedImage.src; // Update the preview image
+    currentImg.textContent = index + 1; // Update the current image number
 
     // Show/hide navigation buttons
     prevBtn.style.display = index === 0 ? "none" : "block";
@@ -32,7 +34,7 @@ const showPreview = (index) => {
     document.body.style.overflow = "hidden"; // Lock body scroll
 };
 
-// Close the preview box
+// Function to close the preview box
 const closePreview = () => {
     previewBox.classList.remove("show");
     shadow.classList.remove("show");

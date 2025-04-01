@@ -5,6 +5,26 @@
 }
 
 /***** Global Styles *****/
+:root {
+    --background-color: #f4f4f9;
+    --primary-color: #6395db;
+    --secondary-color: #344CB7;
+    --accent-color: #fefe63;
+    --text-color: #4250c9;
+    --secondary-text-color: #344CB7;
+    --other-color: black;
+}
+
+[data-theme="dark"] {
+    --background-color: #141e28;
+    --primary-color: #fefe63;
+    --secondary-color: #5664dc;
+    --accent-color: #fefe63;
+    --text-color: #ffffff;
+    --secondary-text-color: #344CB7;
+    --other-color: rgb(34, 116, 119);
+}
+
 body {
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
@@ -14,8 +34,9 @@ body {
         "wdth" 100;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
-    color: #000957;
+    background-color: var(--background-color);
+    color: var(--background-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /***** Header & Navigation *****/
@@ -87,13 +108,12 @@ nav.visible {
     font-size: 18px;
     font-weight: bold;
     padding: 6px 12px;
-    transition: 0.3s ease-in-out;
+    transition: all 0.3s ease;
 }
 
 #nav div ul li a:hover,
 #navbar nav ul li a:hover {
-    background-color: white;
-    color: #121a14a8;
+    color: var(--accent-color);
     border-radius: 3px;
 }
 
@@ -103,7 +123,7 @@ nav.visible {
     left: 0;
     width: 100%;
     position: absolute;
-    background-color: #6fa1d668;
+    background-color: #15283c61;
     padding: 2px;
     color: white;
     text-align: center;
@@ -112,6 +132,7 @@ nav.visible {
     justify-content: space-evenly;
     gap: 2px;
     align-items: center;
+    animation: fadeIn 1.5s forwards;
 }
 
 #fixed-navbar ul li {
@@ -129,7 +150,7 @@ nav.visible {
 }
 
 #fixed-navbar ul li a:hover {
-    color: #fefe63;
+    color: var(--accent-color);
 }
 
 #box a img {
@@ -157,6 +178,28 @@ nav.visible {
     display: flex;
 }
 
+#theme-toggle button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+#theme-toggle button:hover {
+    transform: scale(1.1);
+}
+
+#theme-toggle img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+    transition: color 0.3s ease;
+}
+
 
 /***** Main Content *****/
 .hero {
@@ -168,11 +211,12 @@ nav.visible {
     position: relative;
 }
 
-.hero span {
-    background-color: #ffea005a;
-    background: linear-gradient(to top, #ffffff, #ffea0064);
+.hero .section {
+    background: linear-gradient(to top, var(--secondary-color), var(--other-color));
     padding: 5px;
     backdrop-filter: blur(30px);
+    border: solid rgba(34, 34, 54, 0.642);
+    color: white;
 }
 
 .hero img {
@@ -216,12 +260,12 @@ section img {
 
 section h2 {
     position: absolute;
-    color: white;
     top: 15%;
     font-size: 400%;
     opacity: 0;
     animation: fadeIn 3s forwards;
     transition: all 0.3s ease;
+    color: var(--background-color);
 }
 
 section h2:hover {
@@ -294,20 +338,36 @@ section h2:hover {
 
 .carousel_button--left {
     left: -40px;
+    transform: scale(2);
 }
 
 .carousel_button--right {
     right: -40px;
+    transform: scale(2);
 }
+
+.carousel_button--left:hover {
+    filter: brightness(0) saturate(100%) invert(80%) sepia(50%) hue-rotate(0deg);
+}
+
+.carousel_button--right:hover {
+    filter: brightness(0) saturate(100%) invert(80%) sepia(50%) hue-rotate(0deg);
+}
+
 
 .carousel_indicator {
     border: 0;
     border-radius: 50%;
     width: 12px;
     height: 12px;
-    background: rgba(0, 0, 0, 0.4);
+    background: var(--text-color);
     margin: 0 12px;
     cursor: pointer;
+}
+
+
+.yes.carousel_indicator:hover {
+    background-color: var(--accent-color);
 }
 
 .carousel_nav {
@@ -318,7 +378,7 @@ section h2:hover {
 }
 
 .carousel_indicator.current-slide {
-    background: rgba(0, 0, 0, 0.8);
+    background: var(--other-color);
 }
 
 /**************/
@@ -473,12 +533,35 @@ section h2:hover {
     border-radius: 0 0 3px 3px;
 }
 
+/*****GalleryIcons*******/
+
+
+.icon img:hover,
+.slide img:hover {
+    transform: scale(1.1);
+}
+
+.slide img {
+    width: 30px;
+    height: 30px;
+}
+
+.icon img,
+.slide img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+
 /******************/
 
 .sections {
     display: flex;
     justify-content: space-around;
     padding: 3rem;
+    color: white;
 }
 
 .is-hidden {
@@ -486,7 +569,7 @@ section h2:hover {
 }
 
 .section {
-    background: white;
+    background: var(--secondary-color);
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -494,6 +577,20 @@ section h2:hover {
     text-align: center;
 }
 
+/****Map****/
+
+.map-container {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.map-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+/************/
 /***** Forms & Buttons *****/
 form {
     display: flex;
@@ -516,22 +613,23 @@ textarea {
 
 button {
     padding: 10px;
-    background-color: #007BFF;
-    color: #fff;
+    background-color: var(--background-color);
+    color: var(--text-color);
     border: none;
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #191f26ad;
+    color: var(--secondary-color);
 }
 
 /***** Footer *****/
 footer {
-    background: linear-gradient(to bottom, #344CB7, #000957);
-    color: white;
+    background: linear-gradient(to bottom, var(--secondary-color), var(--other-color));
+    color: var(--text-color);
     padding: 20px 0;
     text-align: center;
 }
@@ -601,7 +699,11 @@ footer {
 .footer-section h3 {
     margin-bottom: 10px;
     font-size: 18px;
-    color: #fefe63;
+    color: var(--accent-color);
+}
+
+.footer-section p {
+    color: var(--background-color);
 }
 
 .footer-section ul {
@@ -619,34 +721,38 @@ footer {
 }
 
 .footer-section ul li a {
-    color: white;
+    color: var(--background-color);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 
 .footer-section ul li a:hover {
-    color: #fefe63;
+    color: var(--accent-color);
 }
 
 .footer-section .visit a:visited {
-    color: #95c8ff;
+    color: var(--secondary-text-color);
 }
 
 
 .footer-bottom {
-    background-color: #1a1901df;
+    background-color: var(--text-color);
     backdrop-filter: blur(30px);
     padding: 10px 0;
     font-size: 14px;
     margin-top: 10px;
 }
 
+.footer-bottom p {
+    color: var(--background-color);
+}
+
 /***** Container *****/
 .container {
     max-width: 600px;
     margin: 50px auto;
-    background: #fff;
+    background: var(--secondary-color);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
