@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Website</title>
+    <link rel="icon" type="image/svg+xml" href="/school-logo.svg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background: #1a3c6d;
+            /* School-themed dark blue */
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            /* Subtle shadow */
+            position: sticky;
+            /* Sticks to top when scrolling */
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            /* Space between logo and school name */
+        }
+
+        .logo {
+            width: 50px;
+            /* Adjust based on your SVG */
+            height: 50px;
+        }
+
+        .school-name {
+            font-size: 1.5rem;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            /* Space between nav items */
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-family: 'Arial', sans-serif;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            /* Smooth hover transition */
+        }
+
+        nav a:visited {
+            color: #d4e6ff;
+            /* Light blue for visited */
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+            /* School gold on hover */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            nav {
+                margin-top: 1rem;
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="/school-logo.svg" alt="School Logo" class="logo">
+            <span class="school-name">Springfield Academy</span>
+        </div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#academics">Academics</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <!-- Rest of your content -->
+    </main>
+</body>
+
+</html>
