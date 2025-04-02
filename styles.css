@@ -113,6 +113,7 @@ nav.visible {
 
 #nav div ul li a:hover,
 #navbar nav ul li a:hover {
+
     color: var(--accent-color);
     border-radius: 3px;
 }
@@ -201,6 +202,7 @@ nav.visible {
 }
 
 
+
 /***** Main Content *****/
 .hero {
     text-align: center;
@@ -210,6 +212,7 @@ nav.visible {
     gap: 20px;
     position: relative;
 }
+
 
 .hero .section {
     background: linear-gradient(to top, var(--secondary-color), var(--other-color));
@@ -553,8 +556,6 @@ section h2:hover {
     cursor: pointer;
     transition: transform 0.3s ease;
 }
-
-
 /******************/
 
 .sections {
@@ -562,6 +563,10 @@ section h2:hover {
     justify-content: space-around;
     padding: 3rem;
     color: white;
+}
+
+.is-hidden {
+    display: none;
 }
 
 .is-hidden {
@@ -768,4 +773,63 @@ h1 {
     color: white;
     font-size: 1.5rem;
     cursor: pointer;
+}
+.news-images{
+    width: 85%;                 
+    height: 75%;               
+    border: 2px solid #0077cc;  
+    border-radius: 8px;         
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin: 10px;               
+    display: flex;     
+    justify-content: center;    
+}
+#calendar{
+    background:whitesmoke;
+    padding:20px;
+    margin:20px auto;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.section-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0077cc; 
+    margin-bottom: 10px;
+}
+.calendar-table {
+    width: 100%;             
+    border-collapse: collapse; 
+    margin-top: 10px;
+}
+
+.calendar-table td {
+    border: 1px solid black;  
+    padding: 10px;            
+    text-align: justify;         
+}
+
+#event-form {
+    background: whitesmoke;
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+form{
+    display:flex;
+    flex-direction:column;
+}
+input {
+    width: 200px;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #0077cc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+button:hover {
+    background: 1a252f;
 }
