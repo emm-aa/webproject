@@ -21,15 +21,63 @@
             <li><a href="contact.html">Contact Us</a></li>
         </ul>
     </div>
-    <div id="navbar"></div>
+
+    <header>
+        <h1>News and Events</h1>
+    </header>
+
     <div class="container">
-        <h1>News</h1>
-        <p>Welcome to our website! We are dedicated to providing the best services and solutions to our customers. Our
-            team is passionate about innovation and excellence.</p>
-        <p>Our mission is to deliver high-quality products that meet the needs of our clients and exceed their
-            expectations. Thank you for visiting!</p>
+        <h>Latest News
+        <br>
+        <br>
+
+        <article class="news-item">
+            <h3>President Museveni lauds Ntare School Education and Career Expo</h3>
+            <br>
+            <p class="news-meta">Published on <time datetime="2025-02-18">18th February 2025</time></p>
+            <p>
+                Ntare School hosted the Uganda Educational and Career Expo 2025. H.E Yoweri Museveni and the First Lady, Janet Kataaha, focused on bridging the gap between ambition and achievements.
+            </p>
+        </article>
+        <br>
+    
+        <img src="news-images/expo.jpg" alt="The vice president that represented President Museveni" class="news-images">
+<br>
+<br>
+        <article class="news-item">
+            <br>
+            <br>
+            <h3>Ntare School unveils lion sculpture with microscopic balls</h3>
+            <br>
+            <p class="news-meta">Published on <time datetime="2025-02-18">18th February 2025</time></p>
+            <p>
+                The lion sculpture was revealed on 18th February 2025. This highly anticipated event was attended by students, teachers, and various Old Boys, many of whom have gone on to hold significant positions in Uganda and beyond.
+            </p>
+        </article>
+        <br>
+        
+        <img src="news-images/lion2.jpg" alt="The schools' pride" class="news-images">
+
     </div>
+
+    <section id="calendar">
+        <div class="section-title">Event Calendar</div>
+        <div id="event-calendar"></div>
+        <br>
+        <br>
+    </section>
+    
+    <section id="event-form">
+<div class="section-title">Submit Event</div> 
+        <form id="newsForm">
+            <input type="text" id="eventsTitle" placeholder="Event's Title" required>
+            <input type="date" id="eventsDate" required>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
     <script src="script.js"></script>
+    <script src="events.js"></script>
 </body>
 
 </html>
