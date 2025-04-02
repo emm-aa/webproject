@@ -1,8 +1,8 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const today = new Date();
     const dateString = today.toDateString();
 
-    
+
     const tableHTML = `
         <table class="calendar-table">
             <tr>
@@ -12,8 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
         </table>
     `;
 
-    
+
     document.getElementById("event-calendar").innerHTML = tableHTML;
 });
 
- 

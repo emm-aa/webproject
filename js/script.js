@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const navbar = navbarContainer.querySelector("nav");
             const fixedNavbar = document.getElementById("fixed-navbar");
-            const scrollThreshold = 200; // Adjust as needed
+            const scrollThreshold = 200;
 
             window.addEventListener("scroll", () => {
                 if (window.scrollY > scrollThreshold) {
